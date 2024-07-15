@@ -87,14 +87,14 @@ resource "aws_security_group" "five" {
   }
 }
 
-resource "aws_s3_bucket" "six" {
-  bucket = "my-tf-test-bucket"
+# resource "aws_s3_bucket" "six" {
+#   bucket = "my-tf-test-bucket"
 
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-}
+#   tags = {
+#     Name        = "My bucket"
+#     Environment = "Dev"
+#   }
+# }
 
 resource "aws_iam_user" "seven" {
 for_each = var.user_names
