@@ -1,6 +1,6 @@
 resource "aws_elb" "demo" {
   name               = "mani-terraform-elb"
-  availability_zones = ["us-east-1a", "us-east-1b"]
+  # availability_zones = ["us-east-1a", "us-east-1b"]
 
   listener {
     instance_port     = 80
