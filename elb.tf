@@ -1,29 +1,29 @@
-resource "aws_elb" "demo" {
-  name               = "mani-terraform-elb"
-  availability_zones = ["us-east-1a", "us-east-1b"]
+# resource "aws_elb" "demo" {
+#   name               = "mani-terraform-elb"
+#   availability_zones = ["us-east-1a", "us-east-1b"]
 
-  listener {
-    instance_port     = 80
-    instance_protocol = "http"
-    lb_port           = 80
-    lb_protocol       = "http"
-  }
+#   listener {
+#     instance_port     = 80
+#     instance_protocol = "http"
+#     lb_port           = 80
+#     lb_protocol       = "http"
+#   }
 
-  health_check {
-    healthy_threshold   = 3
-    unhealthy_threshold = 5
-    timeout             = 5
-    target              = "HTTP:80/"
-    interval            = 30
-  }
+#   health_check {
+#     healthy_threshold   = 3
+#     unhealthy_threshold = 5
+#     timeout             = 5
+#     target              = "HTTP:80/"
+#     interval            = 30
+#   }
 
-  instances                 = ["${aws_instance.one.id}", "${aws_instance.two.id}"]
-  cross_zone_load_balancing = true
-  idle_timeout              = 400
-  tags = {
-    Name = "mani-tf-elb"
-  }
-}
+#   instances                 = ["${aws_instance.one.id}", "${aws_instance.two.id}"]
+#   cross_zone_load_balancing = true
+#   idle_timeout              = 400
+#   tags = {
+#     Name = "mani-tf-elb"
+#   }
+# }
 
  /*resource "aws_rds_cluster" "default" {
   cluster_identifier      = "aurora-cluster-demo"
